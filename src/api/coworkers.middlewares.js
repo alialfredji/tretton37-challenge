@@ -1,4 +1,5 @@
 const Sequelize = require('sequelize');
+const fetch = require('node-fetch');
 const { getCoworkersModel } = require('../postgres');
 
 // Middleware to fetch details of a single coworker by their 'id'
@@ -129,8 +130,8 @@ module.exports.getMany = async (req, res) => {
 module.exports.resetData = async (req, res) => {
 	try {
 		// Download coworker data from the external API
-		const res = await fetch('http://meet.1337co.de/api/employees');
-		const json = await res.json();
+		const fetchRes = await fetch('http://meet.1337co.de/api/employees');
+		const json = await fetchRes.json();
 
 		// Create a mapping of city names to country codes
 		const citiesToCountryMap = [...new Set(json.map(i => i.office))]
@@ -165,6 +166,7 @@ module.exports.resetData = async (req, res) => {
 
 		res.send('Coworkers repopulated');
 	} catch (err) {
+		console.log(err.message);
 		res.status(500).send('Internal server error');
 		return;
 	}

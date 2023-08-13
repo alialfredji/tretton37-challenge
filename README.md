@@ -26,7 +26,7 @@ Before diving into the setup, ensure you have the following software/tools insta
 1. **Using an Existing Database**: If you're keen on bypassing the setup of a new PostgreSQL instance and want a quick setup, you can use the following connection string hosted on [render.com](https://render.com):
 
 ```bash
-postgres://tretton37_challenge_db_2023_08_12_user:CFofbP4IrnYYplQ7aSh6Y30KRctO3bDT@dpg-cjbttlbbq8nc73fv6tlg-a.frankfurt-postgres.render.com/tretton37_challenge_db_2023_08_12
+postgres://tretton37_challenge_db:Dm4uaTyNio3POEdh9ZLvBQhFmNxl6aPd@dpg-cjcl4qrbq8nc73bavak0-a.frankfurt-postgres.render.com/tretton37_challenge_db
 ```
 
 2. **Setting Up a New Database on Render**:
